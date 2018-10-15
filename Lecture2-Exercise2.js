@@ -61,24 +61,29 @@ console.log('Our People are ' +JSON.stringify(People));
 
 // Using the filter method get the younger and older object  
 
-var oldest = People[0].Age;
+var oldest = People[1].Age;
+var youngest = People[0].Age;
 
 console.log('Oldest is ' +oldest);
 
+// if Filter takes a function as an argument?
+
 var OlderPerson = People.filter(function(person) {
-	
 	//return person.Age >= oldest;
-
 	if(person.Age >= oldest) {
-	  return person.Age;
-	}
-
-	
+	  return 1;
+	}	
 });
 
+var YoungerPerson = People.filter(function(person) {
+	//return person.Age >= oldest;
+	if(person.Age <= youngest) {
+	  return 1;
+	}	
+});
 
 // Step 6: 
 
 // print the values here 
 
-console.log('Oldest must be ' +JSON.stringify(OlderPerson));
+console.log('Oldest must be ' +JSON.stringify(OlderPerson) + ', Youngest must be ' +JSON.stringify(YoungerPerson));

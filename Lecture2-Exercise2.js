@@ -82,6 +82,23 @@ var YoungerPerson = People.filter(function(person) {
 	}	
 });
 
+
+// Using the reduce method, get the oldest and youngest
+
+var OlderPerson = People.reduce(function(max, x) { 
+	if(x.Age > max){
+		return x.Age
+	} else {
+		return max;
+	}
+}, 0); // without this zero, the first object in the array will be returned (Person1) rather than the actual age value of the oldest (44). Why is this?
+
+/* here is a leaner way to write the code above - using a ternary operator
+
+var OlderPerson = People.reduce(function(max, x) {
+	return (x.Age > max) ? x.Age : max;
+}, 0);*/
+
 // Step 6: 
 
 // print the values here 
